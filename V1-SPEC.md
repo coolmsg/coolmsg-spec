@@ -42,6 +42,10 @@ RequestID: uint64, ResponseType: uint64, ResponseLen: uint64, ResponseData : byt
 
 # Known types
 
+### Type 0xd4924862b91c639d (ok)
+
+An empty message acknowledging something, usually sent as a response.
+
 ### Type 0x81aba3f7522edc6b (coolmsg error)
 
 This is a [msgpack](https://msgpack.org/index.html) encoded map with 3 fields.
