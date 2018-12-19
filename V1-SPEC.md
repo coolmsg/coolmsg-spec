@@ -3,6 +3,12 @@
 The coolmsg protocol is a way for clients and servers to communicate over a two way data stream such as TCP. Here we
 describe the format for the coolmsg version 1 format.
 
+Some of the goals of the protocol are:
+
+- Simplicity.
+- Security, (an object id is a capability - https://en.wikipedia.org/wiki/Capability-based_security).
+- Flexibility.
+
 # Protocol
 
 A client sends serialized messages to objects on the server, and those objects send replies. The allocation of objects on the server
@@ -12,6 +18,8 @@ The object ID 0 is reserved for future use, and object ID 1 is always the bootst
 
 A server may process messages concurrently, or serially depending on the application,
 but messages always arrive in the order they were sent.
+
+RequestID's are effectively never reused as they are incremented until overflow .
 
 ## Wire format
 
@@ -24,7 +32,6 @@ RequestID: uint64, ObjectID: uint64, MessageType: uint64, MessageLen: uint64, Me
 ### Response message
 
 RequestID: uint64, ResponseType: uint64, ResponseLen: uint64, ResponseData : bytes[ResponseLen]
-
 
 # Known types
 
