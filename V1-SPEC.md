@@ -11,7 +11,7 @@ Some of the goals of the protocol are:
 
 # Protocol
 
-A client sends serialized messages to objects on the server, and those objects send replies. 
+A client sends serialized messages to objects on the server, and those objects send messages as replies. 
 
 Each object has an id, and each message has a well known type, each message sent is addressed to
 an object id, and each response corresponds to a message.
