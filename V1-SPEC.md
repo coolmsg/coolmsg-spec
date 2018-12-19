@@ -42,11 +42,29 @@ RequestID: uint64, ResponseType: uint64, ResponseLen: uint64, ResponseData : byt
 
 # Known types
 
-### Type 0xd4924862b91c639d (ok)
+### Type 0xcf3a50d623ee637d (Clunk)
+
+An empty message sent to an object request it to 'clunk' itself.
+Clunking means to remove itself from the connection and do any cleanup
+necessary.
+
+### Type 0xd782cf4b395eca05 (Object created)
+
+It is common to request the creation of a new coolmsg object, this message can
+be used in a reply to signal to the client the id of the new object.
+
+This is a [msgpack](https://msgpack.org/index.html) encoded map with 1 field.
+
+- Id    uint64 # The object id of the new object.
+
+### Type 0xd4924862b91c639d (Ok)
 
 An empty message acknowledging something, usually sent as a response.
 
-### Type 0x81aba3f7522edc6b (coolmsg error)
+### Type 0x81aba3f7522edc6b (Error)
+
+This message is used by the coolmsg system to signal errors, applications are encouraged to 
+reuse it with their own error codes to signal errors.
 
 This is a [msgpack](https://msgpack.org/index.html) encoded map with 3 fields.
 
