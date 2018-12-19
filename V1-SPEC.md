@@ -38,9 +38,9 @@ type is shared across many applications, make a pull request to this repository 
 
 This is an https://msgpack.org/index.html encoded map with 3 fields.
 
-Code    uint64 # The error code as described below.
-Display string # An error message to display to a user.
-Debug   string # An error message or data to aid in debugging the error.
+- Code    uint64 # The error code as described below.
+- Display string # An error message to display to a user.
+- Debug   string # An error message or data to aid in debugging the error.
 
 #### Known error codes
 
