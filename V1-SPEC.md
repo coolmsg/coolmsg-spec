@@ -19,7 +19,8 @@ an object id, and each response corresponds to a message.
 The object ID 0 is reserved for future use, and object ID 1 is always the bootstrap object.
 
 The allocation of objects on the server is an application detail, a message sent to the bootstrap object
-may trigger the allocation of a new object. Communicating this new id to the client is an application detail.
+may trigger the allocation of a new object. Communicating new id's to the client is an application detail,
+but would generally be specified in an application specific message.
 
 A server may process messages concurrently, or serially depending on the application,
 but messages always arrive in the order they were sent.
