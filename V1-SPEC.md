@@ -55,7 +55,7 @@ be used in a reply to signal to the client the id of an object.
 
 This message is frequently used when a new object is created.
 
-This is a [msgpack](https://msgpack.org/index.html) encoded number.
+This is a [msgpack](https://msgpack.org/index.html) encoded uint64.
 
 ### Type 0xd4924862b91c639d (Ok)
 
