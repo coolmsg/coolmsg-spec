@@ -5,16 +5,17 @@ describe the format for the coolmsg version 1 format.
 
 Some of the goals of the protocol are:
 
-- Simplicity.
-- Security. (an object id is a [capability](https://en.wikipedia.org/wiki/Capability-based_security)).
-- Flexibility.
+- Simplicity
+- Security
+- Flexibility
 
 # Protocol
 
-A client sends serialized messages to objects on the server, and those objects send messages as replies. 
+A client sends serialized messages addressed to objects on the server, and those objects send messages as replies. 
 
-Each object has an id, and each message has a well known type, each message sent is addressed to
-an object id, and each response corresponds to a message.
+Each object has an id, and each message has a well known type.
+
+Each message sent is addressed to an object id, and each response corresponds to a message.
 
 The object ID 0 is reserved for future use, and object ID 1 is always the bootstrap object.
 
@@ -58,3 +59,10 @@ This is a [msgpack](https://msgpack.org/index.html) encoded map with 3 fields.
 
 Generate a random 64 bit integer, if the type is internal only to your application, this should be sufficient. If this
 type is shared across many applications, make a pull request to this repository describing your type.
+
+# Design notes
+
+- Version negotiation is not needed, a different typeid can be assigned for newer messages.
+- Method/function names are not needed, an object performs actions based on the messages and types.
+- Mixed encoding schemes is fine, each type id also describes the encoding.
+- An object id is a [capability](https://en.wikipedia.org/wiki/Capability-based_security). 
