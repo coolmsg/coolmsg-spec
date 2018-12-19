@@ -48,14 +48,14 @@ An empty message sent to an object request it to 'clunk' itself.
 Clunking means to remove itself from the connection and do any cleanup
 necessary.
 
-### Type 0xd782cf4b395eca05 (Object created)
+### Type 0xd782cf4b395eca05 (Object ref)
 
-It is common to request the creation of a new coolmsg object, this message can
-be used in a reply to signal to the client the id of the new object.
+It is common to request the id of an object, this message can
+be used in a reply to signal to the client the id of an object.
 
-This is a [msgpack](https://msgpack.org/index.html) encoded map with 1 field.
+This message is frequently used when a new object is created.
 
-- Id    uint64 # The object id of the new object.
+This is a [msgpack](https://msgpack.org/index.html) encoded number.
 
 ### Type 0xd4924862b91c639d (Ok)
 
@@ -66,7 +66,7 @@ An empty message acknowledging something, usually sent as a response.
 This message is used by the coolmsg system to signal errors, applications are encouraged to 
 reuse it with their own error codes to signal errors.
 
-This is a [msgpack](https://msgpack.org/index.html) encoded map with 3 fields.
+This is a [msgpack](https://msgpack.org/index.html) encoded array with 3 elements.
 
 - Code    uint64 # The error code as described below.
 - Display string # An error message to display to a user.
