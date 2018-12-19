@@ -6,7 +6,7 @@ describe the format for the coolmsg version 1 format.
 Some of the goals of the protocol are:
 
 - Simplicity.
-- Security, (an object id is a capability - https://en.wikipedia.org/wiki/Capability-based_security).
+- Security. (an object id is a [capability](https://en.wikipedia.org/wiki/Capability-based_security)).
 - Flexibility.
 
 # Protocol
@@ -43,7 +43,7 @@ RequestID: uint64, ResponseType: uint64, ResponseLen: uint64, ResponseData : byt
 
 ### Type 0x81aba3f7522edc6b (coolmsg error)
 
-This is an https://msgpack.org/index.html encoded map with 3 fields.
+This is a [msgpack](https://msgpack.org/index.html) encoded map with 3 fields.
 
 - Code    uint64 # The error code as described below.
 - Display string # An error message to display to a user.
