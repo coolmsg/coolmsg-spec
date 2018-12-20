@@ -76,6 +76,7 @@ This is a [msgpack](https://msgpack.org/index.html) encoded array with 3 element
 
 - 0xab0547366de885bc - A coolmsg has been sent to an object that does not exist.
 - 0xd47d4e94917934b2 - A coolmsg has been sent to an object that does not expect this message.
+- Go std library errors registered [here](https://github.com/coolmsg/go-coolmsg/blob/master/goerrors/errors.go)
 
 # Generating your own types
 
